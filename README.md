@@ -1,21 +1,23 @@
-Disable-Work-Mail
+Work-Mail
 =================
 
-Prerequisites
+A little helper to disable your work email in Apple Mail during certain hours of the day.
 
-OS X with Mail and cron installed
+**Prerequisites**
 
-Information
+OSX with Mail
 
-This is a little script I wrote out of necessity to disabled my work email account after work hours and at weekends.
-I use cron with the following info to run the task every half an hour mon-fri.
+**Installation**
 
-0,30 * * * 1-5 /usr/bin/osascript /Library/Scripts/Custom/workemail.scpt
+```
+$ cp com.rassohilber.work-mail.plist ~/Library/LaunchAgents/
+$ cp work-mail.applescript ~/Documents/work-email.applescript
+$ launchctl load ~/Library/LaunchAgents/com.rassohilber.work-mail.plist
+```
 
-osascript is neccessary as cron can't call an applescript directly
+Reload after a change in the Property List file:
 
-To customise replace Dev etc with the name of the email account you wish to be the subject.
-
-Recognition 
-
-I pulled snippets of information and code from various sources, some pretty obscure. If you recognise your work and want a mention please send me a message.
+```
+launchctl unload ~/Library/LaunchAgents/com.rassohilber.work-mail.plist
+launchctl load ~/Library/LaunchAgents/com.rassohilber.work-mail.plist
+```
