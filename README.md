@@ -10,8 +10,8 @@ OSX with Mail
 **Installation**
 
 ```
-$ cp com.rassohilber.work-mail.plist ~/Library/LaunchAgents/
 $ cp work-mail.applescript /usr/local/lib/
+$ cp com.rassohilber.work-mail.plist ~/Library/LaunchAgents/
 $ launchctl load ~/Library/LaunchAgents/com.rassohilber.work-mail.plist
 ```
 
