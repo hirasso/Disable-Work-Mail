@@ -9,8 +9,10 @@
     <key>ProgramArguments</key>
     <array>
       <string>osascript</string>
-      <string>/Users/rah/Documents/work-email.applescript</string>
+      <string>/usr/local/lib/work-mail.applescript</string>
     </array>
+    <key>StandardErrorPath</key>
+    <string>/tmp/err</string>
     <key>RunAtLoad</key>
     <true/>
     <key>StartInterval</key>

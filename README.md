@@ -11,7 +11,7 @@ OSX with Mail
 
 ```
 $ cp com.rassohilber.work-mail.plist ~/Library/LaunchAgents/
-$ cp work-mail.applescript ~/Documents/work-email.applescript
+$ cp work-mail.applescript /usr/local/lib/
 $ launchctl load ~/Library/LaunchAgents/com.rassohilber.work-mail.plist
 ```
 
