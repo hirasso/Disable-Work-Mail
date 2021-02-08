@@ -1,4 +1,4 @@
-set disabledWorkAccounts to false
+set showDialog to false
 
 tell application "Mail"
 	--Defines the current time
@@ -12,8 +12,9 @@ tell application "Mail"
 		--checks if earlier than 9 or later than 5 and disables if so
 		set accountEnabled to get enabled of account currentAccount
 		if theHour < 10 or theHour > 17 then
-			set disabledWorkAccounts to true
+			
 			if accountEnabled is true then
+        set showDialog to true
 				set enabled of account currentAccount to false
 			end if
 			--if between 9 and 5 and the account is disabled it enables it
@@ -24,7 +25,7 @@ tell application "Mail"
 	
 end tell
 
-if disabledWorkAccounts is true then
+if showDialog is true then
 	set text item delimiters to ", "
 	display dialog "Disabled mail accounts: " & (accountList) & "."
 end if
