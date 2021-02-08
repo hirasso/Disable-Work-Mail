@@ -27,5 +27,5 @@ end tell
 
 if showDialog is true then
 	set text item delimiters to ", "
-	display dialog "Disabled mail accounts: " & (accountList) & "."
+	-- display dialog "Disabled mail accounts: " & (accountList) & "."
 end if
