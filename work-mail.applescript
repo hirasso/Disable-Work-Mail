@@ -6,17 +6,16 @@ tell application "Mail"
 	
 	--Loops over the array
 	repeat with currentAccount in accountList
-		set accountName to currentAccount
 		
 		--checks if earlier than 9 or later than 5 and disables if so
-		set accountEnabled to get enabled of account accountName
+		set accountEnabled to get enabled of account currentAccount
 		if theHour < 9 or theHour > 17 then
 			if accountEnabled is true then
-				set enabled of account accountName to false
+				set enabled of account currentAccount to false
 			end if
 			--if between 9 and 5 and the account is disabled it enables it
 		else if accountEnabled = false then
-			set enabled of account accountName to true
+			set enabled of account currentAccount to true
 		end if
 	end repeat
 end tell
