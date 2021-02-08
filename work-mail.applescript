@@ -2,7 +2,7 @@ tell application "Mail"
 	--Defines the current time
 	set theHour to get the (hours of (current date))
 	--Defines the array/list of accounts to check
-	set accountList to {"mail@rassohilber.com"}
+	set accountList to {"Work"}
 	
 	--Loops over the array
 	repeat with currentAccount in accountList
