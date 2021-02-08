@@ -12,10 +12,11 @@
       <string>/usr/local/lib/work-mail.applescript</string>
     </array>
     <key>StandardErrorPath</key>
-    <string>/tmp/err</string>
+    <string>/tmp/work-mail-err</string>
     <key>RunAtLoad</key>
     <true/>
+    <!-- Run once every 5 mintues -->
     <key>StartInterval</key>
-    <integer>1800</integer>
+    <integer>300</integer>
   </dict>
 </plist>
