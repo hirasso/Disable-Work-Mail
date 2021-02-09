@@ -18,6 +18,6 @@ $ launchctl load ~/Library/LaunchAgents/com.rassohilber.work-mail.plist
 Reload after a change in the Property List file:
 
 ```
-launchctl unload ~/Library/LaunchAgents/com.rassohilber.work-mail.plist
-launchctl load ~/Library/LaunchAgents/com.rassohilber.work-mail.plist
+launchctl unload -w ~/Library/LaunchAgents/com.rassohilber.work-mail.plist
+launchctl load -w ~/Library/LaunchAgents/com.rassohilber.work-mail.plist
 ```
