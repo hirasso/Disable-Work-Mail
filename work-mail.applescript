@@ -1,5 +1,8 @@
 set showDialog to false
 
+set workStartTime to 10
+set workEndTime to 17
+
 if application "Mail" is running then
 	tell application "Mail"
 		--Defines the current time
@@ -10,16 +13,16 @@ if application "Mail" is running then
 		--Loops over the array
 		repeat with currentAccount in accountList
 			
-			set accountEnabled to get enabled of account currentAccount
-			--checks if earlier than 9 or later than 5 and disables if so
-			if theHour < 10 or theHour > 17 then
+			set isAccountEnabled to get enabled of account currentAccount
+			--checks if outside of work hours and disables if so
+			if theHour < workStartTime or theHour > workEndTime then
 				
-				if accountEnabled is true then
+				if isAccountEnabled is true then
 					set showDialog to true
 					set enabled of account currentAccount to false
 				end if
 				--if between 9 and 5 and the account is disabled it enables it
-			else if accountEnabled is false then
+			else if isAccountEnabled is false then
 				set enabled of account currentAccount to true
 			end if
 		end repeat
