@@ -1,29 +1,37 @@
-set showDialog to false
+--Defines the array/list of accounts to check
+set accountList to {"Work"}
 
-set workStartTime to 10
-set workEndTime to 17
+--Check if it's nighttime
+set isBedtime to false
+set theHour to get the (hours of (current date))
+if theHour < 9 or theHour > 16
+  set isNight to true
+end if
+
+--check if it's weekend
+set isWeekend to false
+set theDay to weekday of (get current date)
+if theDay = Friday or theDay = Saturday or theDay = Sunday
+  set isWeekend to true
+end if
+
+--Don't show the dialog by default
+set showDialog to false
 
 if application "Mail" is running then
 	tell application "Mail"
-		--Defines the current time
-		set theHour to get the (hours of (current date))
-		--Defines the array/list of accounts to check
-		set accountList to {"Work"}
 		
-		--Loops over the array
 		repeat with currentAccount in accountList
 			
 			set isAccountEnabled to get enabled of account currentAccount
-			--checks if outside of work hours and disables if so
-			if theHour < workStartTime or theHour > workEndTime then
+			
+			if isBedtime or isWeekend then
 				
 				if isAccountEnabled is true then
 					set showDialog to true
 					set enabled of account currentAccount to false
 				end if
-				--if between 9 and 5 and the account is disabled it enables it
-			else if isAccountEnabled is false then
-				set enabled of account currentAccount to true
+			
 			end if
 		end repeat
 		

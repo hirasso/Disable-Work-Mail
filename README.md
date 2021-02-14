@@ -10,14 +10,14 @@ OSX with Mail
 **Installation**
 
 ```
-$ cp work-mail.applescript /usr/local/lib/
-$ cp com.rassohilber.work-mail.plist ~/Library/LaunchAgents/
-$ launchctl load ~/Library/LaunchAgents/com.rassohilber.work-mail.plist
+$ cp disable-work-mail.applescript /usr/local/lib/
+$ sudo cp com.rassohilber.work-mail.plist /Library/LaunchDaemons/
+$ sudo launchctl load /Library/LaunchDaemons/com.rassohilber.work-mail.plist
 ```
 
 Reload after a change in the Property List file:
 
 ```
-launchctl unload -w ~/Library/LaunchAgents/com.rassohilber.work-mail.plist
-launchctl load -w ~/Library/LaunchAgents/com.rassohilber.work-mail.plist
+sudo launchctl unload -w /Library/LaunchDaemons/com.rassohilber.work-mail.plist
+sudo launchctl load -w /Library/LaunchDaemons/com.rassohilber.work-mail.plist
 ```
