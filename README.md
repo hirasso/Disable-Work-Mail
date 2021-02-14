@@ -10,7 +10,7 @@ OSX with Mail
 **Installation**
 
 ```
-$ cp disable-work-mail.applescript /usr/local/lib/
+$ cp work-mail.applescript /usr/local/lib/
 $ sudo cp com.rassohilber.work-mail.plist /Library/LaunchDaemons/
 $ sudo launchctl load /Library/LaunchDaemons/com.rassohilber.work-mail.plist
 ```
